@@ -15,19 +15,18 @@ import os
 os.environ["OPENBLAS_NUM_THREADS"]="1"
 import numpy as np
 
-# Given matrix
+
 A = np.array([[2, 2],
               [1, 3]])
 
-# Eigen values and eigen vectors
 eig_vals, eig_vecs = np.linalg.eig(A)
 
-# Sort eigenvalues (to match expected output order)
+
 idx = np.argsort(eig_vals)
 eig_vals = eig_vals[idx]
 eig_vecs = eig_vecs[:, idx]
 
-# Print in required format
+
 print("Eigen values are", eig_vals, "and Eigen Vectors are", eig_vecs)
 ## Output:
 <img width="1274" height="336" alt="image" src="https://github.com/user-attachments/assets/47ed7571-e295-4ff0-b9a8-b8de13b82bef" />
